@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'm5x7';
+    src: url('../fonts/m5x7.ttf');
+}
+
+.contenedor{
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: white;
+}
+
+.grupo{
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    font-family: 'Press Start 2P', system-ui;
+}
+
+.pregunta-contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Press Start 2P', system-ui;
+    text-align: center;
+    min-height: 90vh;
+}
+
+
+.pregunta{
+    display: flex;
+    flex-direction: column;
+}
+
+.enunciado{
+    text-align: center;
+}
+
+.opciones{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.opcion{
+    font-family: 'm5x7';
+    font-size: 2em;
+}
