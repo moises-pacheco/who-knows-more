@@ -1,0 +1,42 @@
+[
+    {
+        "enunciado": "¿?",
+        "opciones": {
+            "A": "respuesta",
+            "B": "respuesta",
+            "C": "respuesta",
+            "D": "respuesta"
+        },
+        "correcta": "B"
+    },
+    {
+        "enunciado": "¿?",
+        "opciones": {
+            "A": "respuesta",
+            "B": "respuesta",
+            "C": "respuesta",
+            "D": "respuesta"
+        },
+        "correcta": "A"
+    },
+    {
+        "enunciado": "¿?",
+        "opciones": {
+            "A": "respuesta",
+            "B": "respuesta",
+            "C": "respuesta",
+            "D": "respuesta"
+        },
+        "correcta": "D"
+    },
+    {
+        "enunciado": "¿?",
+        "opciones": {
+            "A": "respuesta",
+            "B": "respuesta",
+            "C": "respuesta",
+            "D": "respuesta"
+        },
+        "correcta": "C"
+    }
+]
