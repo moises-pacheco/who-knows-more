@@ -9,6 +9,10 @@
     src: url('../fonts/m5x7.ttf');
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 .contenedor{
     width: 100vw;
     height: 100vh;
@@ -51,4 +55,12 @@
 .opcion{
     font-family: 'm5x7';
     font-size: 2em;
+}
+
+.incorrecta{
+    background-color: red;
+}
+
+.correcta{
+    background-color: green;
 }

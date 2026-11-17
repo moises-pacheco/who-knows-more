@@ -1,42 +1,42 @@
 [
     {
-        "enunciado": "¿?",
+        "enunciado": "¿Cuál es el planeta más grande del sistema solar?",
         "opciones": {
-            "A": "respuesta",
-            "B": "respuesta",
-            "C": "respuesta",
-            "D": "respuesta"
+            "A": "Saturno",
+            "B": "Júpiter",
+            "C": "Neptuno",
+            "D": "Urano"
         },
-        "correcta": "B"
+        "correcta": "Júpiter"
     },
     {
-        "enunciado": "¿?",
+        "enunciado": "¿Quién escribió 'Don Quijote de la Mancha'?",
         "opciones": {
-            "A": "respuesta",
-            "B": "respuesta",
-            "C": "respuesta",
-            "D": "respuesta"
+            "A": "Miguel de Cervantes",
+            "B": "Lope de Vega",
+            "C": "Francisco de Quevedo",
+            "D": "Calderón de la Barca"
         },
-        "correcta": "A"
+        "correcta": "Miguel de Cervantes"
     },
     {
-        "enunciado": "¿?",
+        "enunciado": "¿Cuál es el símbolo químico del oro?",
         "opciones": {
-            "A": "respuesta",
-            "B": "respuesta",
-            "C": "respuesta",
-            "D": "respuesta"
+            "A": "Ag",
+            "B": "Go",
+            "C": "Or",
+            "D": "Au"
         },
-        "correcta": "D"
+        "correcta": "Au"
     },
     {
-        "enunciado": "¿?",
+        "enunciado": "¿En qué año llegó Cristóbal Colón a América?",
         "opciones": {
-            "A": "respuesta",
-            "B": "respuesta",
-            "C": "respuesta",
-            "D": "respuesta"
+            "A": "1478",
+            "B": "1500",
+            "C": "1492",
+            "D": "1512"
         },
-        "correcta": "C"
+        "correcta": "1492"
     }
 ]

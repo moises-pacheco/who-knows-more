@@ -1,8 +1,13 @@
 import UI from "./components/UiGameplay";
-import { type Opciones, type Pregunta } from "./ts/preguntas";
+import { obtenerPreguntas } from "./ts/helpers";
 import './App.css'
+import { Preguntas } from "./ts/Preguntas";
+import UiGameplay from "./components/UiGameplay";
+import { Grupo } from "./ts/Grupo";
 
-//TEST
+
+const preguntasDTO = await obtenerPreguntas("../src/json/preguntas.json");
+const preguntas = new Preguntas(preguntasDTO);
 
 
 function App() {
@@ -10,7 +15,9 @@ function App() {
 
   return (
     <>
-      <UI pregunta={}/>
+      <UiGameplay
+        pregunta={preguntas}
+      />
     </>
   )
 }
