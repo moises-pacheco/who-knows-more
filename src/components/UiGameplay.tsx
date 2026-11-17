@@ -31,6 +31,14 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
         setEsCorrecta(null);
     }
 
+    const reproducirSonido = () => {
+        if(esCorrecta){
+            // Sonido positivo
+        }else{
+            //Sonido negativo
+        }
+    }
+
 
     return (
         <div className="contenedor">
