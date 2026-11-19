@@ -2,10 +2,12 @@ export class Grupo {
 
     private nombre: string;
     private puntos: number;
+    private img: string;
 
-    constructor(nombre: string, puntos: number = 0) {
+    constructor(nombre: string, puntos: number = 0, urlImagen: string) {
         this.nombre = nombre;
         this.puntos = puntos;
+        this.img = urlImagen;
     }
 
     getNombre() {
@@ -16,7 +18,11 @@ export class Grupo {
         return this.puntos;
     }
 
-    sumarPuntos(cantidad: number) {
-        return new Grupo(this.nombre, this.puntos + cantidad);
+    getImagen(){
+        return this.img;
+    }
+
+    conPuntos(cantidad: number) {
+        return new Grupo(this.nombre, this.puntos + cantidad, this.img);
     }
 }
