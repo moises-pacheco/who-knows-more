@@ -35,6 +35,10 @@
     box-shadow: .2em .2em 0 rgb(30, 0, 85);
 }
 
+.primer-grupo-contenedor:hover, .segundo-grupo-contenedor:hover{
+    cursor: pointer;
+}
+
 .icon{
     width: 3em;
 }
@@ -93,10 +97,18 @@
     text-align: center;
 }
 
-.nombre-personaje{
+.nombre-personaje-contenedor{
+    display: flex;
+    align-content: center;
+    justify-content: center;
     color: white;
     font-family: 'm5x7';
     font-size: 2em;
+}
+
+.nombre-personaje{
+    background-color: rgba(0,0,0,0.8);
+    padding: 0 .8em;
 }
 
 .opciones{

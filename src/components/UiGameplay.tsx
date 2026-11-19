@@ -108,7 +108,9 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
 
                     <div className="personaje">
                         <img src={grupoSeleccionado?.getImagen()} />
-                        <p className="nombre-personaje">{grupoSeleccionado?.getPersonaje()}</p>
+                        <div className="nombre-personaje-contenedor">
+                            <p className="nombre-personaje">{grupoSeleccionado?.getPersonaje()}</p>
+                        </div>
                     </div>
 
                     <div className="pregunta-contenedor-grupos">
