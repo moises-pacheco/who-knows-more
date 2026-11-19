@@ -108,11 +108,11 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
 
                     <div className="personaje">
                         <img src={grupoSeleccionado?.getImagen()} />
-                        <p>Fabian</p>
+                        <p className="nombre-personaje">Fabian</p>
                     </div>
 
                     <div className="pregunta-contenedor-grupos">
-                        
+
                         <div className="selector-grupos">
 
                             <div className="primer-grupo-contenedor">
@@ -133,6 +133,7 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
 
                         </div>
                         <div className="enunciado">
+                            <p className="pregunta">Pregunta:</p>
                             <p>{pregunta.getPregunta().enunciado}</p>
                         </div>
 
