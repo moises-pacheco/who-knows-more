@@ -21,7 +21,27 @@
 
 .selector-grupos{
     display: flex;
+    color: white;
+    font-family: 'm5x7';
 }
+
+.primer-grupo-contenedor,.segundo-grupo-contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    margin-right: 2em;
+    padding-right: 1em;
+    box-shadow: .2em .2em 0 rgb(30, 0, 85);
+}
+
+.icon{
+    width: 3em;
+}
+
+
+
+
 
 .personaje-pregunta-comodines{
     display: flex;
@@ -98,12 +118,13 @@ img{
     font-family: 'm5x7';
     font-size: 3em;
     color: white;
-    background-color: rgba(20, 20, 20, 1);
     border: none;
     margin: .1em;
     border: 2px solid transparent;
-    transition: border-color .3s ease-in-out;
+    transition: border-color .3s ease-in-out,
+    background-color .3s ease-in-out;
     filter: drop-shadow(.1em .1em rgb(30, 0, 85));
+
 }
 
 .opciones button:hover{
@@ -111,10 +132,15 @@ img{
     cursor: pointer;
 }
 
-.correcto{
-    background-color: green;
+.opcion{
+    background-color: rgba(20, 20, 20, 1);
 }
 
-.incorrecto{
+.correcta{
+    background-color: rgb(0, 231, 42);
+}
+
+.incorrecta{
     background-color: red;
 }
+

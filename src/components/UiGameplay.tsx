@@ -12,8 +12,8 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
     const [opcionSeleccionada, setOpcionSeleccionada] = useState<string | null>(null);
     const [esCorrecta, setEsCorrecta] = useState<boolean | null>(null);
     const [grupos, setGrupos] = useState<Grupo[]>([
-        new Grupo("Grupo 1", 0, fabian),
-        new Grupo("Grupo 2", 0, analog_boy)
+        new Grupo("Grupo 1", 0, fabian, "Fabian"),
+        new Grupo("Grupo 2", 0, junior, "Junior")
     ]);
 
     const MAX_TURNO = 2;
@@ -41,7 +41,7 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
 
     // Obtener la clase actual según la respuesta dada
     const getClase = (letra: string): string => {
-        if (opcionSeleccionada !== letra) return " ";
+        if (opcionSeleccionada !== letra) return "";
         return esCorrecta ? "correcta" : "incorrecta";
     }
 
@@ -108,7 +108,7 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
 
                     <div className="personaje">
                         <img src={grupoSeleccionado?.getImagen()} />
-                        <p className="nombre-personaje">Fabian</p>
+                        <p className="nombre-personaje">{grupoSeleccionado?.getPersonaje()}</p>
                     </div>
 
                     <div className="pregunta-contenedor-grupos">
@@ -116,7 +116,7 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
                         <div className="selector-grupos">
 
                             <div className="primer-grupo-contenedor">
-                                <img src="" alt="" />
+                                <img src={fabian} alt=""  className="icon"/>
                                 <div className="grupo-detalles">
                                     <p>Grupo 1</p>
                                     <p>150 pts</p>
@@ -124,7 +124,7 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
                             </div>
 
                             <div className="segundo-grupo-contenedor">
-                                <img src="" alt="" />
+                                <img src={junior} alt="" className="icon" />
                                 <div className="grupo-detalles">
                                     <p>Grupo 2</p>
                                     <p>150 pts</p>
