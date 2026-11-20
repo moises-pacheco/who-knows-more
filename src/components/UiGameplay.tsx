@@ -5,8 +5,14 @@ import analog_boy from "../characters/animation/Analog_Boy_cara.gif"
 import { Preguntas } from "../ts/Preguntas";
 import { useState } from "react";
 import { Grupo } from "../ts/Grupo";
+import sfx_confirm from "../sfx/sfx_confirm.mp3";
+import sfx_error from "../sfx/sfx_error.mp3";
+
 
 function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
+
+    //AUDIO
+
 
     //HOOKS
     const [opcionSeleccionada, setOpcionSeleccionada] = useState<string | null>(null);
@@ -26,12 +32,13 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
         setEsCorrecta(resultado);
 
         if (resultado) {
+            reproducirSonido(resultado);
             sumar(`Grupo${turno}`, 50);
             setTimeout(() => {
                 siguientePregunta();
-                reproducirSonido();
             }, 1000)
         } else {
+            reproducirSonido(resultado);
             setTimeout(() => {
                 limpiarRespuesta();
                 siguienteTurno();
@@ -58,12 +65,19 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
     }
 
     //Reproducir sonido dependiendo de la respuesta.
-    const reproducirSonido = () => {
-        if (esCorrecta) {
-            // Sonido positivo
-        } else {
-            //Sonido negativo
+    const reproducirSonido = (correcta: boolean) => {
+        if (correcta) {
+            let sfx_c = new Audio(sfx_confirm);
+            sfx_c.play();
         }
+
+        if(!correcta){
+            let sfx_e = new Audio(sfx_error);
+            sfx_e.play();
+        }
+          
+
+
     }
 
     const sumar = (nombre: string, cantidad: number) => {
@@ -118,7 +132,7 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
                         <div className="selector-grupos">
 
                             <div className="primer-grupo-contenedor">
-                                <img src={fabian} alt=""  className="icon"/>
+                                <img src={fabian} alt="" className="icon" />
                                 <div className="grupo-detalles">
                                     <p>Grupo 1</p>
                                     <p>150 pts</p>

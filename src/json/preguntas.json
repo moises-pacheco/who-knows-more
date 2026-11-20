@@ -1,42 +1,222 @@
 [
     {
-        "enunciado": "¿Cuál es el planeta más grande del sistema solar?",
+        "enunciado": "What do people usually eat in San Sebastián?",
         "opciones": {
-            "A": "Saturno",
-            "B": "Júpiter",
-            "C": "Neptuno",
-            "D": "Urano"
+            "A": "Tapas",
+            "B": "Pintxos",
+            "C": "Pizza",
+            "D": "Burgers"
         },
-        "correcta": "Júpiter"
+        "correcta": "Pintxos"
     },
     {
-        "enunciado": "¿Quién escribió 'Don Quijote de la Mancha'?",
+        "enunciado": "What is the most famous pintxo in San Sebastián?",
         "opciones": {
-            "A": "Miguel de Cervantes",
-            "B": "Lope de Vega",
-            "C": "Francisco de Quevedo",
-            "D": "Calderón de la Barca"
+            "A": "Mini Completo",
+            "B": "Grilled Foie",
+            "C": "La Gilda",
+            "D": "Pantxineta"
         },
-        "correcta": "Miguel de Cervantes"
+        "correcta": "La Gilda"
     },
     {
-        "enunciado": "¿Cuál es el símbolo químico del oro?",
+        "enunciado": "What fish is in La Gilda?",
         "opciones": {
-            "A": "Ag",
-            "B": "Go",
-            "C": "Or",
-            "D": "Au"
+            "A": "Salmon",
+            "B": "Cod",
+            "C": "Sardines",
+            "D": "Anchovies"
         },
-        "correcta": "Au"
+        "correcta": "Anchovies"
     },
     {
-        "enunciado": "¿En qué año llegó Cristóbal Colón a América?",
+        "enunciado": "Grilled Foie and Scallops are ___ pintxos.",
         "opciones": {
-            "A": "1478",
-            "B": "1500",
-            "C": "1492",
-            "D": "1512"
+            "A": "Hot",
+            "B": "Cold",
+            "C": "Sweet",
+            "D": "Old"
         },
-        "correcta": "1492"
+        "correcta": "Hot"
+    },
+    {
+        "enunciado": "What is in Txangurro a la Donostiarra?",
+        "opciones": {
+            "A": "Tuna",
+            "B": "Crab",
+            "C": "Beef",
+            "D": "Chicken"
+        },
+        "correcta": "Crab"
+    },
+    {
+        "enunciado": "Where do people eat Chuletón a la Parrilla?",
+        "opciones": {
+            "A": "Bakeries",
+            "B": "Beaches",
+            "C": "Cider houses",
+            "D": "Cinemas"
+        },
+        "correcta": "Cider houses"
+    },
+    {
+        "enunciado": "Where is the Basque Cheesecake from?",
+        "opciones": {
+            "A": "Mount Igueldo",
+            "B": "La Concha",
+            "C": "Santa Clara",
+            "D": "The Old Town"
+        },
+        "correcta": "The Old Town"
+    },
+    {
+        "enunciado": "Pantxineta has sugar and...",
+        "opciones": {
+            "A": "Almonds",
+            "B": "Chocolate",
+            "C": "Bread",
+            "D": "Fruit"
+        },
+        "correcta": "Almonds"
+    },
+    {
+        "enunciado": "When is the Tamborrada?",
+        "opciones": {
+            "A": "December 21st",
+            "B": "January 20th",
+            "C": "August 15th",
+            "D": "September 1st"
+        },
+        "correcta": "January 20th"
+    },
+    {
+        "enunciado": "In the Tamborrada, people dress as soldiers and...",
+        "opciones": {
+            "A": "Pirates",
+            "B": "Farmers",
+            "C": "Cooks",
+            "D": "Actors"
+        },
+        "correcta": "Cooks"
+    },
+    {
+        "enunciado": "How many hours do people play drums in the Tamborrada?",
+        "opciones": {
+            "A": "12",
+            "B": "6",
+            "C": "48",
+            "D": "24"
+        },
+        "correcta": "24"
+    },
+    {
+        "enunciado": "What can you see over La Concha Bay in August?",
+        "opciones": {
+            "A": "Fireworks",
+            "B": "Boats",
+            "C": "Planes",
+            "D": "Snow"
+        },
+        "correcta": "Fireworks"
+    },
+    {
+        "enunciado": "What is a Basque rural sport?",
+        "opciones": {
+            "A": "Surfing",
+            "B": "Stone lifting",
+            "C": "Football",
+            "D": "Cycling"
+        },
+        "correcta": "Stone lifting"
+    },
+    {
+        "enunciado": "People swim to which island?",
+        "opciones": {
+            "A": "Igueldo",
+            "B": "Ibiza",
+            "C": "Santa Clara",
+            "D": "Gipuzkoa"
+        },
+        "correcta": "Santa Clara"
+    },
+    {
+        "enunciado": "When is the Film Festival?",
+        "opciones": {
+            "A": "January",
+            "B": "August",
+            "C": "December",
+            "D": "September"
+        },
+        "correcta": "September"
+    },
+    {
+        "enunciado": "What do people eat on Saint Thomas Day?",
+        "opciones": {
+            "A": "Txistorra",
+            "B": "Marmitako",
+            "C": "Pantxineta",
+            "D": "Chuletón"
+        },
+        "correcta": "Txistorra"
+    },
+    {
+        "enunciado": "San Sebastián is the capital of...",
+        "opciones": {
+            "A": "Bizkaia",
+            "B": "Gipuzkoa",
+            "C": "Araba",
+            "D": "Navarra"
+        },
+        "correcta": "Gipuzkoa"
+    },
+    {
+        "enunciado": "How many people live in San Sebastián?",
+        "opciones": {
+            "A": "89,000",
+            "B": "1,890,000",
+            "C": "189,000",
+            "D": "18,900"
+        },
+        "correcta": "189,000"
+    },
+    {
+        "enunciado": "What do we call the people from San Sebastián?",
+        "opciones": {
+            "A": "Bilbaínos",
+            "B": "Gipuzkoanos",
+            "C": "Conchanos",
+            "D": "Donostiarras"
+        },
+        "correcta": "Donostiarras"
+    },
+    {
+        "enunciado": "What sea is next to San Sebastián?",
+        "opciones": {
+            "A": "Cantabrian",
+            "B": "Mediterranean",
+            "C": "North Sea",
+            "D": "Red Sea"
+        },
+        "correcta": "Cantabrian"
+    },
+    {
+        "enunciado": "What happened to the city in 1813?",
+        "opciones": {
+            "A": "A flood",
+            "B": "A fire",
+            "C": "An earthquake",
+            "D": "A storm"
+        },
+        "correcta": "A fire"
+    },
+    {
+        "enunciado": "Where can you see the whole city from above?",
+        "opciones": {
+            "A": "The Old Town",
+            "B": "A cider house",
+            "C": "Mount Igueldo",
+            "D": "La Concha Beach"
+        },
+        "correcta": "Mount Igueldo"
     }
 ]
