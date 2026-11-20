@@ -33,7 +33,7 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
 
         if (resultado) {
             reproducirSonido(resultado);
-            sumar(`Grupo${turno}`, 50);
+            sumar(`Grupo ${turno}`, 50);
             setTimeout(() => {
                 siguientePregunta();
             }, 1000)
@@ -100,19 +100,13 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
         if (grupos) return grupos.find((g) => g.getNombre() == turnoGrupo);
     }
 
+    //LÓGICA DE SELECCIÓN DE GRUPOS
     const seleccionarGrupo = (event: React.MouseEvent<HTMLDivElement>) => {
         const id = event.currentTarget.id;
         console.log(id);
-        if(id == "Grupo 1"){
-            setTurno(1);
-            actualizarGrupo(turno);
-        }else if(id == "Grupo 2"){
-            setTurno(2);
-            actualizarGrupo(turno);
-        }else{
-            console.warn("No se ha detectado ningún grupo.")
-        }
-
+        if(id == "Grupo 1") setTurno(1);
+        else if(id == "Grupo 2") setTurno(2);
+        else console.warn("No se ha detectado ningún grupo.")
     }
 
 
@@ -153,7 +147,7 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
                                 <img src={fabian} alt="" className="icon" />
                                 <div className="grupo-detalles">
                                     <p>Grupo 1</p>
-                                    <p>150 pts</p>
+                                    <p>{grupos[0].getPuntos()} pts</p>
                                 </div>
                             </div>
 
@@ -161,7 +155,7 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
                                 <img src={junior} alt="" className="icon" />
                                 <div className="grupo-detalles">
                                     <p>Grupo 2</p>
-                                    <p>150 pts</p>
+                                    <p>{grupos[1].getPuntos()} pts</p>
                                 </div>
                             </div>
 
