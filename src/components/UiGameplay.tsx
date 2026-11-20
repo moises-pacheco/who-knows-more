@@ -3,7 +3,7 @@ import fabian from "../characters/animation/Fabian_cara.gif";
 import junior from "../characters/animation/Junior_cara.gif";
 import analog_boy from "../characters/animation/Analog_Boy_cara.gif"
 import { Preguntas } from "../ts/Preguntas";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Grupo } from "../ts/Grupo";
 import sfx_confirm from "../sfx/sfx_confirm.mp3";
 import sfx_error from "../sfx/sfx_error.mp3";
@@ -100,6 +100,22 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
         if (grupos) return grupos.find((g) => g.getNombre() == turnoGrupo);
     }
 
+    const seleccionarGrupo = (event: React.MouseEvent<HTMLDivElement>) => {
+        const id = event.currentTarget.id;
+        console.log(id);
+        if(id == "Grupo 1"){
+            setTurno(1);
+            actualizarGrupo(turno);
+        }else if(id == "Grupo 2"){
+            setTurno(2);
+            actualizarGrupo(turno);
+        }else{
+            console.warn("No se ha detectado ningún grupo.")
+        }
+
+    }
+
+
     //Cambia la variable turno para luego pasarsela a actualizar grupo.
     const siguienteTurno = () => {
         setTurno(turnoAnterior => {
@@ -112,6 +128,8 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
     }
 
     const grupoSeleccionado = actualizarGrupo(turno);
+
+
 
 
     return (
@@ -131,7 +149,7 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
 
                         <div className="selector-grupos">
 
-                            <div className="primer-grupo-contenedor">
+                            <div className="primer-grupo-contenedor" id="Grupo 1" onClick={(event) => {seleccionarGrupo(event)}}>
                                 <img src={fabian} alt="" className="icon" />
                                 <div className="grupo-detalles">
                                     <p>Grupo 1</p>
@@ -139,7 +157,7 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
                                 </div>
                             </div>
 
-                            <div className="segundo-grupo-contenedor">
+                            <div className="segundo-grupo-contenedor" id="Grupo 2" onClick={(event) => {seleccionarGrupo(event)}}>
                                 <img src={junior} alt="" className="icon" />
                                 <div className="grupo-detalles">
                                     <p>Grupo 2</p>
