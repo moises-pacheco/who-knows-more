@@ -1,4 +1,4 @@
-import "../styles/UI.css";
+import "../styles/UIGameplay.css";
 import fabian from "../characters/animation/Fabian_cara.gif";
 import junior from "../characters/animation/Junior_cara.gif";
 import analog_boy from "../characters/animation/Analog_Boy_cara.gif"
@@ -9,7 +9,7 @@ import sfx_confirm from "../sfx/sfx_confirm.mp3";
 import sfx_error from "../sfx/sfx_error.mp3";
 
 
-function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
+function UIGameplay({ pregunta }: { pregunta: Preguntas }) {
 
     //AUDIO
 
@@ -114,6 +114,7 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
     const siguienteTurno = () => {
         setTurno(turnoAnterior => {
             if (turnoAnterior >= MAX_TURNO) {
+                siguientePregunta();
                 return 1;
             } else {
                 return turnoAnterior + 1;
@@ -161,14 +162,14 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
 
                         </div>
                         <div className="enunciado">
-                            <p className="pregunta">Pregunta:</p>
+                            <p className="pregunta">Question:</p>
                             <p>{pregunta.getPregunta().enunciado}</p>
                         </div>
 
                         <div className="comodines-grupo">
                             <button>50/50</button>
-                            <button>Llamada</button>
-                            <button>Público</button>
+                            <button>Call</button>
+                            <button>Audience</button>
                         </div>
                     </div>
 
@@ -188,4 +189,4 @@ function UiGameplay({ pregunta }: { pregunta: Preguntas }) {
     )
 }
 
-export default UiGameplay;
+export default UIGameplay;

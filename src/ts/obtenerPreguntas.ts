@@ -11,3 +11,8 @@ export async function obtenerPreguntas(url:string){
     const preguntas = await preguntasDTO.json() as Pregunta[];
     return preguntas;
 }
+
+
+
+
+
