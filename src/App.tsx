@@ -1,4 +1,5 @@
 import UISeleccionDePersonaje from "./components/UISeleccionDePersonaje";
+import UIGameplay from "./components/UIGameplay";
 
 import { obtenerPreguntas } from "./ts/obtenerPreguntas";
 import { Preguntas } from "./ts/Preguntas";
@@ -6,7 +7,6 @@ import { Preguntas } from "./ts/Preguntas";
 import './App.css'
 import { Grupo } from './ts/Grupo';
 import { useState } from "react";
-import UIGameplay from "./components/UIGameplay";
 
 
 const preguntasDTO = await obtenerPreguntas("../src/json/preguntas.json");

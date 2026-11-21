@@ -48,18 +48,18 @@ function UISeleccionDePersonaje({ grupos, setGrupos }: Props) {
                 </h1>
                 <div className="seleccion">
 
-                    <div className="personaje fabian">
+                    <div className="personaje-seleccion fabian">
                         <h1>FABIAN</h1>
                         <img src={fabian} alt="" />
                         <button onClick={() => { alPresionarSeleccion(fabian, "Fabian") }}>SELECT</button>
                     </div>
 
-                    <div className="personaje junior">
+                    <div className="personaje-seleccion junior">
                         <h1>JUNIOR</h1>
                         <img src={junior} alt="" />
                         <button onClick={() => { alPresionarSeleccion(junior, "Junior") }}>SELECT</button>
                     </div>
-                    <div className="personaje analog_boy">
+                    <div className="personaje-seleccion analog_boy">
                         <h1>ANALOG BOY</h1>
                         <img src={analogBoy} alt="" />
                         <button onClick={() => { alPresionarSeleccion(analogBoy, "Analog Boy") }}>SELECT</button>

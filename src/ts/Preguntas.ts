@@ -39,7 +39,4 @@ export class Preguntas {
         return opcion === this.getPregunta().correcta;
     }
 
-
-
-
 }

@@ -41,17 +41,14 @@ function UIGameplay({ pregunta, grupos, setGrupos }: { pregunta: Preguntas, grup
         }
     }
 
-    // Obtener la clase actual según la respuesta dada
-    const getClase = (letra: string): string => {
-        if (opcionSeleccionada !== letra) return "";
-        return esCorrecta ? "correcta" : "incorrecta";
-    }
+
 
     //Función para llevar al jugador a la siguiente pregunta.
     const siguientePregunta = () => {
         pregunta.siguientePregunta();
         setOpcionSeleccionada(null);
         setEsCorrecta(null);
+        setOcultas([]);
     }
 
     const limpiarRespuesta = () => {
@@ -70,9 +67,6 @@ function UIGameplay({ pregunta, grupos, setGrupos }: { pregunta: Preguntas, grup
             let sfx_e = new Audio(sfx_error);
             sfx_e.play();
         }
-          
-
-
     }
 
     const sumar = (nombre: string, cantidad: number) => {
@@ -117,6 +111,33 @@ function UIGameplay({ pregunta, grupos, setGrupos }: { pregunta: Preguntas, grup
         })
     }
 
+    // Obtener la clase actual según la respuesta dada
+    const getClase = (letra: string): string => {
+        if (opcionSeleccionada !== letra) return "";
+        return esCorrecta ? "correcta" : "incorrecta";
+    }
+
+    //COMODINES
+    const [ocultas, setOcultas] = useState<string[]>([]);
+
+    const cincuentaYcincuenta = () => {
+
+        const {opciones, correcta} = pregunta.getPregunta();
+
+        // Buscar las letras que son incorrectas.
+        const incorrectas = Object.entries(opciones)
+        .filter(([,opcion]) => opcion !== correcta)
+        .map(([letra]) => letra);
+
+        // Bajaramos y ocultamos solo dos.
+        const aOcultar = incorrectas
+        .sort(() => Math.random() - 0.5)
+        .slice(0, 2);
+
+        setOcultas(aOcultar);
+
+    }
+
     const grupoSeleccionado = actualizarGrupo(turno);
 
 
@@ -128,10 +149,10 @@ function UIGameplay({ pregunta, grupos, setGrupos }: { pregunta: Preguntas, grup
 
                 <div className="personaje-pregunta-comodines">
 
-                    <div className="personaje">
+                    <div className="personaje-gameplay">
                         <img className="img" src={grupoSeleccionado?.getImagen()} />
                         <div className="nombre-personaje-contenedor">
-                            <p className="nombre-personaje">{grupoSeleccionado?.getPersonaje()}</p>
+                            <p className="nombre-personaje">{grupoSeleccionado?.getNombre()}</p>
                         </div>
                     </div>
 
@@ -162,21 +183,21 @@ function UIGameplay({ pregunta, grupos, setGrupos }: { pregunta: Preguntas, grup
                         </div>
 
                         <div className="comodines-grupo">
-                            <button>50/50</button>
-                            <button>Call</button>
-                            <button>Audience</button>
+                            <button onClick={() => {cincuentaYcincuenta()}}>50/50</button>
+                            <button onClick={() => {}}>Call</button>
+                            <button onClick={() => {}}>Audience</button>
                         </div>
                     </div>
 
                 </div>
 
-                <div className="opciones">
-                    {Object.entries(pregunta.getPregunta().opciones).map(([letra, texto]) => (
+                <div className="opciones" id="opciones">
+                    {Object.entries(pregunta.getPregunta().opciones).map(([letra, opcion]) => (
                         <button
                             key={letra}
-                            className={`opcion ${getClase(letra)}`}
-                            onClick={() => alPresionarOpcion(letra, texto)}
-                        >{texto}</button>
+                            className={`opcion ${getClase(letra)} ${ocultas.includes(letra) ? "oculto" : ""}`}
+                            onClick={() => alPresionarOpcion(letra, opcion)}
+                        >{opcion}</button>
                     ))}
                 </div>
             </div>
