@@ -8,31 +8,61 @@ import analogBoy from "../characters/Analog_Boy.gif";
 // CLASES
 
 import { Grupo } from "../ts/Grupo";
+import { useState } from "react";
 
-function UISeleccionDePersonaje() {
+
+interface Props {
+    grupos: Grupo[];
+    setGrupos: React.Dispatch<React.SetStateAction<Grupo[]>>;
+}
+
+
+
+function UISeleccionDePersonaje({ grupos, setGrupos }: Props) {
+
+    //Hooks
+    const [turno, setTurno] = useState(1);
+
+    const alPresionarSeleccion = (img_personaje: string, nombre_personaje: string) => {
+        if (grupos.length >= 2) {
+            console.log("Solo puedes almacenar dos grupos");
+            return;
+        }
+
+        const nuevoGrupo = new Grupo(`Grupo ${turno}`, 0, img_personaje, nombre_personaje);
+        setGrupos(prev => [...prev, nuevoGrupo]);
+        console.log(nuevoGrupo);
+
+        if (turno < 2) {
+            setTurno(prev => prev + 1);
+        }
+
+    }
+
+
     return (
         <>
             <div className="contenedor">
                 <h1 className="seleccion-personaje-h1">
-                    <span className="resaltar-grupo">GROUP 1:</span> SELECT YOUR CHARACTER
+                    <span className="resaltar-grupo">{`Grupo ${turno}`}</span> SELECT YOUR CHARACTER
                 </h1>
                 <div className="seleccion">
 
                     <div className="personaje fabian">
-                        <h1>Fabian</h1>
+                        <h1>FABIAN</h1>
                         <img src={fabian} alt="" />
-                        <button>Select</button>
+                        <button onClick={() => { alPresionarSeleccion(fabian, "Fabian") }}>SELECT</button>
                     </div>
 
                     <div className="personaje junior">
-                        <h1>Junior</h1>
+                        <h1>JUNIOR</h1>
                         <img src={junior} alt="" />
-                        <button>Select</button>
+                        <button onClick={() => { alPresionarSeleccion(junior, "Junior") }}>SELECT</button>
                     </div>
                     <div className="personaje analog_boy">
-                        <h1>Analog Boy</h1>
+                        <h1>ANALOG BOY</h1>
                         <img src={analogBoy} alt="" />
-                        <button>Select</button>
+                        <button onClick={() => { alPresionarSeleccion(analogBoy, "Analog Boy") }}>SELECT</button>
                     </div>
 
                 </div>

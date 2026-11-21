@@ -1,7 +1,4 @@
 import "../styles/UIGameplay.css";
-import fabian from "../characters/animation/Fabian_cara.gif";
-import junior from "../characters/animation/Junior_cara.gif";
-import analog_boy from "../characters/animation/Analog_Boy_cara.gif"
 import { Preguntas } from "../ts/Preguntas";
 import React, { useState } from "react";
 import { Grupo } from "../ts/Grupo";
@@ -9,7 +6,9 @@ import sfx_confirm from "../sfx/sfx_confirm.mp3";
 import sfx_error from "../sfx/sfx_error.mp3";
 
 
-function UIGameplay({ pregunta }: { pregunta: Preguntas }) {
+
+
+function UIGameplay({ pregunta, grupos, setGrupos }: { pregunta: Preguntas, grupos: Grupo[], setGrupos: React.Dispatch<React.SetStateAction<Grupo[]>>}) {
 
     //AUDIO
 
@@ -17,10 +16,6 @@ function UIGameplay({ pregunta }: { pregunta: Preguntas }) {
     //HOOKS
     const [opcionSeleccionada, setOpcionSeleccionada] = useState<string | null>(null);
     const [esCorrecta, setEsCorrecta] = useState<boolean | null>(null);
-    const [grupos, setGrupos] = useState<Grupo[]>([
-        new Grupo("Grupo 1", 0, fabian, "Fabian"),
-        new Grupo("Grupo 2", 0, junior, "Junior")
-    ]);
 
     const MAX_TURNO = 2;
     const [turno, setTurno] = useState(1);
@@ -134,7 +129,7 @@ function UIGameplay({ pregunta }: { pregunta: Preguntas }) {
                 <div className="personaje-pregunta-comodines">
 
                     <div className="personaje">
-                        <img src={grupoSeleccionado?.getImagen()} />
+                        <img className="img" src={grupoSeleccionado?.getImagen()} />
                         <div className="nombre-personaje-contenedor">
                             <p className="nombre-personaje">{grupoSeleccionado?.getPersonaje()}</p>
                         </div>
@@ -145,7 +140,7 @@ function UIGameplay({ pregunta }: { pregunta: Preguntas }) {
                         <div className="selector-grupos">
 
                             <div className="primer-grupo-contenedor" id="Grupo 1" onClick={(event) => {seleccionarGrupo(event)}}>
-                                <img src={fabian} alt="" className="icon" />
+                                <img src={grupos[0].getImagen()} alt="" className="icon" />
                                 <div className="grupo-detalles">
                                     <p>Grupo 1</p>
                                     <p>{grupos[0].getPuntos()} pts</p>
@@ -153,7 +148,7 @@ function UIGameplay({ pregunta }: { pregunta: Preguntas }) {
                             </div>
 
                             <div className="segundo-grupo-contenedor" id="Grupo 2" onClick={(event) => {seleccionarGrupo(event)}}>
-                                <img src={junior} alt="" className="icon" />
+                                <img src={grupos[1].getImagen()} alt="" className="icon" />
                                 <div className="grupo-detalles">
                                     <p>Grupo 2</p>
                                     <p>{grupos[1].getPuntos()} pts</p>
