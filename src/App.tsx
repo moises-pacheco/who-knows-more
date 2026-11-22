@@ -1,9 +1,10 @@
 import UISeleccionDePersonaje from "./components/UISeleccionDePersonaje";
 import UIGameplay from "./components/UIGameplay";
 import ModalComodinLlamada from "./components/ModalComodinLlamada";
+import ModalComodinPublico from "./components/ModalComodinPublico";
 
 import { obtenerPreguntas } from "./ts/obtenerPreguntas";
-import { Preguntas } from "./ts/Preguntas";
+import { Preguntas} from './ts/Preguntas';
 
 import './App.css'
 import { Grupo } from './ts/Grupo';
@@ -15,15 +16,16 @@ const preguntas = new Preguntas(preguntasDTO);
 
 
 function App() {
-  const [grupos,setGrupos] = useState<Grupo[]>([]);
+  // const [grupos,setGrupos] = useState<Grupo[]>([]);
 
-  if(grupos.length < 2){
-    return <UISeleccionDePersonaje grupos={grupos} setGrupos={setGrupos}/>
-  }
+  // if(grupos.length < 2){
+  //   return <UISeleccionDePersonaje grupos={grupos} setGrupos={setGrupos}/>
+  // }
 
-  return <UIGameplay pregunta={preguntas} grupos={grupos} setGrupos={setGrupos}/>
+  // return <UIGameplay pregunta={preguntas} grupos={grupos} setGrupos={setGrupos}/>
+
   
-
+  return <ModalComodinPublico pregunta={preguntas.getPregunta()}/>
 }
 
 export default App

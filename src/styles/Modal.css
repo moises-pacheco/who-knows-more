@@ -53,3 +53,27 @@
     justify-content: center;
     align-items: center;
 }
+
+
+/* MODAL COMODIN PUBLICO  */
+
+.op {
+    text-align: left;
+    font-family: "Press Start 2P";
+    color: white;
+    margin-top: 2em;
+    margin-left: 2em;
+    font-size: 2em;
+    filter: drop-shadow(.2em .2em 0 black);
+    display: flex;
+}
+
+.op p{
+    margin-right: .8em;
+}
+
+.votos {
+    width: 5em;
+    background-color: rgb(255, 251, 0);
+    transition: 0.4s ease-in-out;
+}
