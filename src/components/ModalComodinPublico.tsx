@@ -3,17 +3,17 @@ import { useEffect, useState } from "react";
 
 
 
-function ModalComodinPublico({ pregunta }: { pregunta: Pregunta }) {
+function ModalComodinPublico({ pregunta, onCerrar }: { pregunta: Pregunta, onCerrar: () => void }) {
 
   const { opciones, correcta } = pregunta;
 
   let opcionesIncorrectas = Object.entries(opciones)
     .filter(([, opcion]) => opcion != correcta)
-    .map(([letra]) => letra);
+    .map(([,opcion]) => opcion);
 
   let opcionCorrecta = Object.entries(opciones)
     .filter(([, opcion]) => opcion == correcta)
-    .map(([letra]) => letra);
+    .map(([,opcion]) => opcion);
 
 
   const [rangos, setRangos] = useState<number>(0)
@@ -42,10 +42,18 @@ function ModalComodinPublico({ pregunta }: { pregunta: Pregunta }) {
         setRangoOpcionCorrecta(15);
       }
     }, 1000)
+
+    return inicio;
   }
 
   useEffect(() => {
-    mostrarPublico();
+    const inicio = mostrarPublico();
+    const fin = setTimeout(onCerrar, 15 * 1000);
+
+    return () => {
+      clearInterval(inicio);
+      clearTimeout(fin);
+    }
   }, [])
 
 

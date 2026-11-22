@@ -16,16 +16,15 @@ const preguntas = new Preguntas(preguntasDTO);
 
 
 function App() {
-  // const [grupos,setGrupos] = useState<Grupo[]>([]);
+  const [grupos,setGrupos] = useState<Grupo[]>([]);
 
-  // if(grupos.length < 2){
-  //   return <UISeleccionDePersonaje grupos={grupos} setGrupos={setGrupos}/>
-  // }
+  if(grupos.length < 2){
+    return <UISeleccionDePersonaje grupos={grupos} setGrupos={setGrupos}/>
+  }
 
-  // return <UIGameplay pregunta={preguntas} grupos={grupos} setGrupos={setGrupos}/>
+  return <UIGameplay pregunta={preguntas} grupos={grupos} setGrupos={setGrupos}/>
 
   
-  return <ModalComodinPublico pregunta={preguntas.getPregunta()}/>
 }
 
 export default App

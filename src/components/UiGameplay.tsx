@@ -7,6 +7,7 @@ import sfx_error from "../sfx/sfx_error.mp3";
 
 //Modal
 import ModalComodinLlamada from "./ModalComodinLlamada";
+import ModalComodinPublico from "./ModalComodinPublico";
 
 
 
@@ -20,8 +21,11 @@ function UIGameplay({ pregunta, grupos, setGrupos }: { pregunta: Preguntas, grup
     const [opcionSeleccionada, setOpcionSeleccionada] = useState<string | null>(null);
     const [esCorrecta, setEsCorrecta] = useState<boolean | null>(null);
 
+    //COMODINES
     const [comodinLlamada, setComodinLlamada] = useState(false);
+    const [comodinPublico, setComodinPublico] = useState(false);
 
+    //TURNOS
     const MAX_TURNO = 2;
     const [turno, setTurno] = useState(1);
 
@@ -190,7 +194,7 @@ function UIGameplay({ pregunta, grupos, setGrupos }: { pregunta: Preguntas, grup
                         <div className="comodines-grupo">
                             <button onClick={() => {cincuentaYcincuenta()}}>50/50</button>
                             <button onClick={() => {setComodinLlamada(true)}}>Call</button>
-                            <button onClick={() => {}}>Audience</button>
+                            <button onClick={() => {setComodinPublico(true)}}>Audience</button>
                         </div>
                     </div>
 
@@ -211,6 +215,10 @@ function UIGameplay({ pregunta, grupos, setGrupos }: { pregunta: Preguntas, grup
                 <ModalComodinLlamada segundos={15} 
                 onCerrar={() => setComodinLlamada(false)}/>
             )}
+
+            {comodinPublico && (
+                <ModalComodinPublico pregunta={pregunta.getPregunta()} onCerrar={() => {setComodinPublico(false)}}/>
+            )} 
 
         </div>
     )
