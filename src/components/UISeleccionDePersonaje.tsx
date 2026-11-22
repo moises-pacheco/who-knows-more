@@ -44,7 +44,7 @@ function UISeleccionDePersonaje({ grupos, setGrupos }: Props) {
         <>
             <div className="contenedor">
                 <h1 className="seleccion-personaje-h1">
-                    <span className="resaltar-grupo">{`Grupo ${turno}`}</span> SELECT YOUR CHARACTER
+                    <span className="resaltar">{`Grupo ${turno}`}</span> SELECT YOUR CHARACTER
                 </h1>
                 <div className="seleccion">
 

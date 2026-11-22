@@ -1,5 +1,6 @@
 import UISeleccionDePersonaje from "./components/UISeleccionDePersonaje";
 import UIGameplay from "./components/UIGameplay";
+import ModalComodinLlamada from "./components/ModalComodinLlamada";
 
 import { obtenerPreguntas } from "./ts/obtenerPreguntas";
 import { Preguntas } from "./ts/Preguntas";
@@ -22,6 +23,7 @@ function App() {
 
   return <UIGameplay pregunta={preguntas} grupos={grupos} setGrupos={setGrupos}/>
   
+
 }
 
 export default App

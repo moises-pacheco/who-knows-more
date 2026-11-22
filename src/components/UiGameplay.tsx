@@ -5,6 +5,9 @@ import { Grupo } from "../ts/Grupo";
 import sfx_confirm from "../sfx/sfx_confirm.mp3";
 import sfx_error from "../sfx/sfx_error.mp3";
 
+//Modal
+import ModalComodinLlamada from "./ModalComodinLlamada";
+
 
 
 
@@ -16,6 +19,8 @@ function UIGameplay({ pregunta, grupos, setGrupos }: { pregunta: Preguntas, grup
     //HOOKS
     const [opcionSeleccionada, setOpcionSeleccionada] = useState<string | null>(null);
     const [esCorrecta, setEsCorrecta] = useState<boolean | null>(null);
+
+    const [comodinLlamada, setComodinLlamada] = useState(false);
 
     const MAX_TURNO = 2;
     const [turno, setTurno] = useState(1);
@@ -184,7 +189,7 @@ function UIGameplay({ pregunta, grupos, setGrupos }: { pregunta: Preguntas, grup
 
                         <div className="comodines-grupo">
                             <button onClick={() => {cincuentaYcincuenta()}}>50/50</button>
-                            <button onClick={() => {}}>Call</button>
+                            <button onClick={() => {setComodinLlamada(true)}}>Call</button>
                             <button onClick={() => {}}>Audience</button>
                         </div>
                     </div>
@@ -201,6 +206,12 @@ function UIGameplay({ pregunta, grupos, setGrupos }: { pregunta: Preguntas, grup
                     ))}
                 </div>
             </div>
+
+            {comodinLlamada && (
+                <ModalComodinLlamada segundos={15} 
+                onCerrar={() => setComodinLlamada(false)}/>
+            )}
+
         </div>
     )
 }
